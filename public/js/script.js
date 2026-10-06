@@ -9,7 +9,7 @@
    - procesarGuardado: eliminado set inutil antes de reload
    ========================================= */
 
-const SCRIPT_URL    = "https://script.google.com/macros/s/AKfycbz3qRP9I_aFF3DDtkJAuW3VrxtseCfgsUaEIK9wieqkVZ2yf3_RzdG-EbDYQvMHuexKgA/exec";
+const SCRIPT_URL    = "https://script.google.com/macros/s/AKfycbwvbVgXqR1sW4ITgaoz6W2VfAdmdbnlh-PWgeSd5t-Bqsz24k4EcQCDpF93CPLcgQC9/exec";
 const VALIDADOR_URL = "https://xvnancy.vercel.app/validador.html";
 
 /* ── JSONP ── */
