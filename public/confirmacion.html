@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación - XV Ana Guadalupe</title>
+
+  <!-- ✅ FIX: Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- ✅ FIX PERF: Preconnect para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ✅ FIX PERF: Un solo <link> de fuentes (eliminado @import del CSS) -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Montserrat:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/addons.css">
+
+  <!-- QRCode y html2canvas se necesitan antes del DOMContentLoaded — se mantienen en <head> -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+</head>
+<body class="page-confirmacion">
+
+  <canvas id="confeti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none"></canvas>
+
+  <div class="confirmacion-card">
+
+    <div id="confirmacion-loader" class="confirmacion-loader">Cargando información...</div>
+
+    <div id="confirmacion-contenido" style="display:none">
+
+      <h2 id="tituloFamilia"></h2>
+      <p class="confirmacion-subtitulo">XV Años · Ana Guadalupe · 26 Diciembre 2026</p>
+
+      <div id="statusBadge" class="status-badge"></div>
+
+      <!-- FORMULARIO -->
+      <div id="formularioConfirmacion">
+        <div class="confirmacion-divisor"><span></span><em>✦</em><span></span></div>
+        <div id="listaIntegrantes"></div>
+        <button id="btnEnviar" class="btn-confirmacion-enviar" onclick="enviarConfirmacion()">
+          Guardar Confirmación
+        </button>
+      </div>
+
+      <!-- VISTA CONFIRMADA -->
+      <div id="vistaConfirmada" style="display:none">
+
+        <p id="resumenTexto" class="confirmacion-resumen"></p>
+
+        <!-- PASES QR INDIVIDUALES -->
+        <div class="confirmacion-divisor"><span></span><em>✦</em><span></span></div>
+        <p class="pases-titulo">🎟️ Tus Pases de Acceso</p>
+        <p class="pases-subtitulo">Guarda la imagen de cada pase y preséntalo en la entrada — al escanear el QR con la cámara aparecerá la confirmación de acceso</p>
+        <div id="qr-container"></div>
+
+        <button class="btn-modificar-respuesta" onclick="habilitarEdicion()">
+          Modificar mi respuesta
+        </button>
+      </div>
+
+    </div>
+  </div>
+   
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

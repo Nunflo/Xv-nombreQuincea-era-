@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador - XV Nancy Paola</title>
+
+  <!-- ✅ FIX: Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- ✅ FIX PERF: Preconnect para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ✅ FIX PERF: Un solo <link> de fuentes (eliminado @import del CSS) -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/addons.css">
+
+  <!-- html5-qrcode necesita cargarse antes de initValidador() -->
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body class="page-validador">
+
+  <h2>XV Ana Guadalupe</h2>
+  <p class="validador-subtitulo">Control de Acceso · 26 Diciembre 2026</p>
+
+  <div id="reader"></div>
+
+  <div id="validador-status" class="validador-mensaje"></div>
+
+  <!-- BÚSQUEDA MANUAL -->
+  <div class="validador-manual">
+    <p class="validador-manual-label">¿QR no escanea? Búsqueda manual:</p>
+    <div class="validador-busqueda-row">
+      <input
+        type="text"
+        id="busqueda-manual"
+        class="validador-input"
+        placeholder="Nombre del integrante..."
+        onkeydown="if(event.key==='Enter') buscarManual()"
+      />
+      <button class="btn-buscar-manual" onclick="buscarManual()">Buscar</button>
+    </div>
+  </div>
+
+  <div class="validador-botones">
+    <button class="btn-validador-nuevo" onclick="location.reload()">📷 Escanear nuevo</button>
+  </div>
+
+  <!-- HISTORIAL -->
+  <div class="historial-wrapper" id="historial-wrapper" style="display:none">
+    <div class="historial-header">
+      <span>📋 Últimos accesos en esta sesión</span>
+      <span id="historial-contador" class="historial-contador">0</span>
+    </div>
+    <div id="historial-lista"></div>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
